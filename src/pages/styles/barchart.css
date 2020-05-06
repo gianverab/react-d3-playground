@@ -1,0 +1,12 @@
+.barchart {
+    background: beige;
+    height: 100vh;
+}
+
+.chartwrapper {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+
