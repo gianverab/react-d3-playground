@@ -1,19 +1,15 @@
-import React from 'react';
-import { Route } from "react-router-dom";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 import Home from "./pages/home";
-import BarChart from "./pages/barchart"
+import BarChart from "./pages/barchart";
 
-import "./App.css"
-
-function App() {
+const App = () => {
   return (
-    <div >
-      <div>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/barchart" component={BarChart} />
-      </div>
-    </div>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/barchart" component={BarChart} />
+    </Switch>
   );
-}
+};
 
 export default App;
