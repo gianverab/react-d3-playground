@@ -29,7 +29,7 @@ const Sandbox = () => {
       "November",
       "December",
     ];
-    const xVals = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    // const xVals = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     const yVals = [5, 6, 2, 7, 9, 1, 3, 4, 8, 3, 6, 7];
 
     const svg = d3
@@ -48,12 +48,12 @@ const Sandbox = () => {
 
     const xScale = d3
       .scaleBand()
-      .domain(xVals)
+      .domain(months)
       .range([margin.left, width + margin.left]);
     const yScale = d3
-      .scaleBand()
-      .domain(yVals)
-      .range([height + margin.bottom, margin.top]);
+      .scaleLinear()
+      .domain([0, d3.max(yVals)])
+      .range([height - margin.bottom, margin.top]);
 
     const xAxis = d3.axisBottom(xScale);
     const yAxis = d3.axisLeft(yScale);
@@ -61,7 +61,11 @@ const Sandbox = () => {
     svg
       .append("g")
       .call(xAxis)
-      .attr("transform", `translate(0, ${height + margin.top})`);
+      .attr("transform", `translate(0, ${height - margin.top})`)
+      .selectAll("text")
+      .attr("text-anchor", "start")
+      .attr("transform", "rotate(45)")
+      .attr("x", 10);
     svg
       .append("g")
       .call(yAxis)
