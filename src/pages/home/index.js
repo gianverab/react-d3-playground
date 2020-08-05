@@ -4,22 +4,22 @@ import styled from "styled-components";
 
 const Home = () => {
   return (
-    <AppWrapper>
-      <AppHeader>
-        <AppTitle className="App-header-title">
+    <HomeWrapper>
+      <HomeHeader>
+        <HomeTitle className="App-header-title">
           React and D3 Playground
-        </AppTitle>
+        </HomeTitle>
         <Link to="../barchart">Bar Chart Example</Link>
-      </AppHeader>
-    </AppWrapper>
+      </HomeHeader>
+    </HomeWrapper>
   );
 };
 
-const AppWrapper = styled.div`
+const HomeWrapper = styled.div`
   text-align: center;
 `;
 
-const AppHeader = styled.header`
+const HomeHeader = styled.header`
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -34,7 +34,7 @@ const AppHeader = styled.header`
   }
 `;
 
-const AppTitle = styled.h1`
+const HomeTitle = styled.h1`
   color: #61dafb;
   font-family: Rubik;
   font-weight: 400;
