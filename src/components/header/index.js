@@ -14,13 +14,13 @@ const Header = () => {
 const HeaderWrapper = styled.div`
   background: black;
   color: white;
-  padding: 10px 200px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 500px) {
-    padding: 10px 10px;
+  @media screen and (min-width: 769px) {
+    padding: 10px 100px;
   }
 
   a {
@@ -32,6 +32,11 @@ const HeaderWrapper = styled.div`
 const HeaderTitle = styled.h1`
   font-family: Rubik;
   font-weight: 300;
+  font-size: 24px;
+
+  @media screen and (min-width: 769px) {
+    font-size: 32px;
+  }
 `;
 
 export default Header;
